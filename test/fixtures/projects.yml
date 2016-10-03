@@ -1,0 +1,5 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+awesome_sauce:
+  name: Awesome_Sauce
+  target_amount: 500

@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+john:
+  given_name: John
+  project: awesome_sauce
+  credit_card_number: 4111111111111111
+  backing_amount: 50
