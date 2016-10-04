@@ -32,8 +32,8 @@ task list: :environment do
     remaining_balance -= backer.backing_amount
     puts "-- #{backer.given_name} backed for #{backer.backing_amount.to_dollars}"
   end
-
-  puts "#{project.name} needs #{remaining_balance.to_dollars} to be successfull"
+  abort "#{project.name} needs #{remaining_balance.to_dollars} more dollars to be successfull" if remaining_balance > 0
+  puts "#{project.name} is successfull!" 
 end
 
 # The `backer` input will display a list of projects that a backer has backed
@@ -43,7 +43,7 @@ task backer: :environment do
   prepare_args
   backer = Backer.find_by(given_name: ARGV[1])
   abort 'ERROR: No backer with that name exists' unless backer
-  puts "-- Backed #{backer.project.name} for $#{backer.backing_amount.to_dollars}"
+  puts "-- Backed #{backer.project.name} for #{backer.backing_amount.to_dollars}"
 end
 
 private
